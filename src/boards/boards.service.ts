@@ -38,11 +38,6 @@ export class BoardsService {
 
   deleteBoard(id: string) {
     const found = this.getBoardById(id);
-
-    if (!found) {
-      throw new NotFoundException('없어용3');
-    }
-
     this.boards = this.boards.filter((board) => board.id !== found.id);
   }
 
