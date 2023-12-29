@@ -19,6 +19,11 @@ import { BoardStatus } from './board-status-enum';
 export class BoardsController {
   constructor(private boardsService: BoardsService) {}
 
+  @Get()
+  getAllBoards() {
+    return this.boardsService.getAllBoards();
+  }
+
   @Get('/:id')
   getBoardById(@Param('id') id: number) {
     return this.boardsService.getBoardById(id);
