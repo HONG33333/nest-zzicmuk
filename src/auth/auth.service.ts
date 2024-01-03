@@ -25,7 +25,7 @@ export class AuthService {
       const payload = { username }; // 중요 정보 포함하면 안된다
       const accessToken = this.jwtService.sign(payload);
 
-      return { accessToken };
+      return { accessToken, user };
     } else {
       throw new UnauthorizedException('login failed');
     }
