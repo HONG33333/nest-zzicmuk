@@ -29,6 +29,11 @@ export class BoardsController {
     return this.boardsService.getAllBoards();
   }
 
+  @Get('/me')
+  getAllBoardsByUserId(@GetUser() user: User) {
+    return this.boardsService.getAllBoardsByUserId(user);
+  }
+
   @Get('/:id')
   getBoardById(@Param('id') id: number) {
     return this.boardsService.getBoardById(id);
